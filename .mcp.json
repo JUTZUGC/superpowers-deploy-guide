@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "superpowers-guide": {
+      "command": "node",
+      "args": [
+        "mcp-server.mjs"
+      ]
+    }
+  }
+}

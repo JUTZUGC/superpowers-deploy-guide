@@ -1,0 +1,114 @@
+{
+  "owner": "JUTZUGC",
+  "code": "JUTZUGC",
+  "project": {
+    "key": "superpowers",
+    "nameCn": "Superpowers",
+    "repoName": "superpowers-deploy-guide",
+    "oneLiner": "306.6k stars，MIT，给 Claude Code / Codex / Cursor 等 Agent 装上完整软件开发方法论与 15 个可组合技能",
+    "officialRepo": "https://github.com/obra/superpowers",
+    "officialDocs": "https://github.com/obra/superpowers#installation",
+    "stars": "306.6k",
+    "license": "MIT",
+    "highlights": [
+      "306.6k stars：2025-10 建仓，一年冲到 30 万",
+      "15 个技能：brainstorming / writing-plans / TDD / code-review 等",
+      "强制流程：Agent 动手前必须先问清需求，不是靠你提醒",
+      "子代理开发：每个任务派一个干净上下文的子代理，做完立刻审查",
+      "多宿主：Claude Code、Codex、Cursor、Gemini CLI、OpenCode、Kimi 等十余种",
+      "MIT：可改可内部分发"
+    ],
+    "mcpSupport": "Superpowers 不是 MCP server，是一套 Agent 技能与工作流；本仓库只负责安装，不注册 MCP。",
+    "webuiUrl": "",
+    "adapterPorts": "",
+    "collectedAt": "2026-10-27",
+    "verification": [
+      [
+        "仓库元数据核对：306,609 stars、27,292 forks、MIT、2025-10-09 建仓",
+        "已核对 2026-10-27"
+      ],
+      [
+        "GitHub Trending 日榜 +617、周榜进入前列",
+        "已核对 2026-10-27"
+      ],
+      [
+        "仓库根目录确认存在 skills/ 目录，共 15 个技能",
+        "已核对 2026-10-27"
+      ],
+      [
+        "package.json 确认 version 7.0.1，最新 release 为 v7.0.1（2026-10-21）",
+        "已核对 2026-10-27"
+      ],
+      [
+        "README 确认 Claude Code / Antigravity / Codex / Cursor / Gemini CLI 等十余种宿主安装方式",
+        "已核对 2026-10-27"
+      ],
+      [
+        "未实测技能在客户端内的触发效果",
+        "说明 2026-10-27"
+      ]
+    ],
+    "deploy": {
+      "type": "script",
+      "steps": [
+        "git clone --depth=1 https://github.com/obra/superpowers.git",
+        "mkdir -p ~/.claude/skills",
+        "cp -R superpowers/skills/* ~/.claude/skills/",
+        "ls ~/.claude/skills | head -n 15",
+        "echo \"安装完成：新开一个会话，说一句话验证 brainstorming 是否触发\""
+      ],
+      "stepsPs": [
+        "git clone --depth=1 https://github.com/obra/superpowers.git",
+        "New-Item -ItemType Directory -Force -Path \"$env:USERPROFILE\\.claude\\skills\" | Out-Null",
+        "Copy-Item -Recurse -Force \"superpowers\\skills\\*\" \"$env:USERPROFILE\\.claude\\skills\\\"",
+        "Get-ChildItem \"$env:USERPROFILE\\.claude\\skills\" -Name | Select-Object -First 15",
+        "Write-Host '安装完成：新开一个会话，说一句话验证 brainstorming 是否触发'"
+      ],
+      "source": "https://github.com/obra/superpowers#installation"
+    },
+    "pitfalls": [
+      "技能不触发：确认装到了客户端真正读取的目录，路径别写错",
+      "手动复制后没反应：钩子没装，改成插件安装，或在对话里点名用 superpowers",
+      "觉得太啰嗦：官方建议简单任务自行判断，不必每个改动都走全流程",
+      "子代理任务失败：先看它读到的计划文件路径是否正确",
+      "和已有 skills 冲突：同名技能会被覆盖，装前先备份技能目录",
+      "Claude Code 找不到插件：先 `/plugin marketplace add` 再安装"
+    ]
+  },
+  "gate": {
+    "allow": [
+      "dumate"
+    ],
+    "label": "百度搭子",
+    "url": "https://www.dumate.cn/",
+    "guideUrl": "https://github.com/JUTZUGC/superpowers-deploy-guide",
+    "howToFix": [
+      "1. 打开 https://www.dumate.cn/ ，下载并安装「百度搭子」电脑端（Windows / macOS）",
+      "2. 用账号登录",
+      "3. 在对话窗口发送：你好，帮我从 github 部署 JUTZUGC/superpowers-deploy-guide 到我的电脑上",
+      "4. 部署完成后，在同一对话窗口里继续使用"
+    ],
+    "hint": "请改用「百度搭子」部署后再使用；本工具没有网页版入口。",
+    "onError": "allow"
+  },
+  "keywords": [
+    "Superpowers 安装",
+    "Superpowers 部署",
+    "Claude Code 技能包",
+    "AI 编程 工作流",
+    "TDD Agent 技能",
+    "obra superpowers 教程",
+    "Codex 技能 安装",
+    "Cursor 技能 配置",
+    "AI 开发方法论",
+    "子代理开发"
+  ],
+  "topics": [
+    "ai-agents",
+    "claude-code",
+    "developer-tools",
+    "tdd",
+    "skills",
+    "workflow"
+  ]
+}
